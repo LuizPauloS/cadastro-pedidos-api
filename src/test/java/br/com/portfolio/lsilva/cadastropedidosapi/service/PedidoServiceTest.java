@@ -97,21 +97,6 @@ public class PedidoServiceTest {
         assertEquals(10, pedido.getItensPedido().size());
     }
 
-    @Test
-    public void deveAtualizarPedido() {
-        Pedido pedidoAtualizado = MockUtils.buildPedidoUuid(pedidoAberto.getId(), pedidoAberto.getPedidoAberto(),
-                pedidoAberto.getDataPedido(), 20, pedidoAberto.getItensPedido());
-
-        when(this.repository.findById(pedidoAtualizado.getId())).thenReturn(Optional.of(pedidoAberto));
-        when(this.repository.save(pedidoAtualizado)).thenReturn(pedidoAtualizado);
-
-        Pedido pedido = this.serviceImp.update(pedidoAtualizado, pedidoAtualizado.getId());
-
-        assertNotNull(pedido);
-        assertNotNull(pedido.getId());
-        assertEquals(pedido.getValorTotal(), pedidoAtualizado.getValorTotal());
-    }
-
     @Test(expected = NotFoundException.class)
     public void naoDeveAtualizarPedidoDeveOcorrerErroNaoEncontrado() {
         Pedido pedidoNovo = MockUtils.buildPedido(true);

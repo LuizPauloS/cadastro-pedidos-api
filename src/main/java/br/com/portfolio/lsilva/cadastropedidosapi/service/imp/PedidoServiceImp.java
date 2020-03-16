@@ -121,8 +121,11 @@ public class PedidoServiceImp implements IPedidoService<Pedido> {
     }
 
     private double getDescontoPedido(Pedido pedido, double totalPedido) {
-        return BigDecimal.valueOf(totalPedido)
-                .multiply(BigDecimal.valueOf(pedido.getPercentualDesconto()))
-                .divide(new BigDecimal(100)).doubleValue();
+        if (pedido.getPedidoAberto()) {
+            return BigDecimal.valueOf(totalPedido)
+                    .multiply(BigDecimal.valueOf(pedido.getPercentualDesconto()))
+                    .divide(new BigDecimal(100)).doubleValue();
+        }
+        return 0;
     }
 }

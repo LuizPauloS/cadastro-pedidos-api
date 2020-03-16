@@ -58,7 +58,7 @@ public class MockUtils {
         return itensPedido;
     }
 
-    private static ItemPedido buildItemPedido(ProdutoServico produtoServico) {
+    public static ItemPedido buildItemPedido(ProdutoServico produtoServico) {
         ItemPedido itemPedido = ItemPedido.builder()
                 .produtoServico(produtoServico)
                 .quantidadeItem(new Random().nextInt(10))
