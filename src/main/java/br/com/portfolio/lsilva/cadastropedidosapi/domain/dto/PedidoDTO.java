@@ -31,7 +31,7 @@ public class PedidoDTO implements Serializable {
     private double percentualDesconto;
 
     public Pedido transformaParaObjeto() {
-        return new Pedido(valorTotal, pedidoAberto, LocalDateTime.now(), new ItemPedidoDTO()
+        return new Pedido(valorTotal, pedidoAberto, LocalDateTime.now(), ItemPedidoDTO
                 .transformaParaListaDeObjetos(itensPedido), percentualDesconto);
     }
 }

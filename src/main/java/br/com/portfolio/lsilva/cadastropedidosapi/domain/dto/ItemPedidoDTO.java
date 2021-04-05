@@ -24,11 +24,11 @@ public class ItemPedidoDTO implements Serializable {
     @Min(value = 1, message = "Quantidade de Item por Pedido deve ser de no mínimo 1.")
     private int quantidadeItem;
 
-    public List<ItemPedido> transformaParaListaDeObjetos(List<ItemPedidoDTO> itensPedidosDTO){
-        return itensPedidosDTO.stream().map(this::transformaParaObjeto).collect(Collectors.toList());
+    public static List<ItemPedido> transformaParaListaDeObjetos(List<ItemPedidoDTO> itensPedidosDTO){
+        return itensPedidosDTO.stream().map(ItemPedidoDTO::transformaParaObjeto).collect(Collectors.toList());
     }
 
-    private ItemPedido transformaParaObjeto(ItemPedidoDTO itemPedidoDTO){
+    private static ItemPedido transformaParaObjeto(ItemPedidoDTO itemPedidoDTO){
         return new ItemPedido(itemPedidoDTO.getProdutoServico().transformaParaObjeto(), itemPedidoDTO.getQuantidadeItem());
     }
 }
