@@ -1,23 +1,12 @@
 version: '3.7'
 services:
-  db:
-    image: pedidos-database
+  database-pedidos:
     ports:
-      - "5434:5432"
+      - "5432:5432"
     expose:
-      - "5434"
+      - "5432"
     build:
-      context: db-postgres/
-    restart: unless-stopped
-  pedidos-api:
-    image: pedidos-api
-    depends_on:
-      - pedidos-database
-    ports:
-      - "9000:9000"
-    expose:
-      - "9000"
-    tty: false
+      context: database/
     restart: unless-stopped
 volumes:
   postgres-data:

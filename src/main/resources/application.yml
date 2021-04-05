@@ -16,6 +16,6 @@ spring:
         type: trace
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5434/cadastro_pedidos?createDatabaseIfNotExist=true
+    url: jdbc:postgresql://localhost:5432/cadastro_pedidos?createDatabaseIfNotExist=true
     username: postgres
     password: ep25dbbr
