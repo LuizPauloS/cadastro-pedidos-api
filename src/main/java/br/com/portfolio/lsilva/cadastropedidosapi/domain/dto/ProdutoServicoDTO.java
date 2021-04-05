@@ -1,12 +1,9 @@
 package br.com.portfolio.lsilva.cadastropedidosapi.domain.dto;
 
-import br.com.portfolio.lsilva.cadastropedidosapi.domain.entity.ItemPedido;
 import br.com.portfolio.lsilva.cadastropedidosapi.domain.entity.ProdutoServico;
 import br.com.portfolio.lsilva.cadastropedidosapi.domain.enumeration.Categoria;
 import lombok.*;
 
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;

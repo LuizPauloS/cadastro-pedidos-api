@@ -1,6 +1,5 @@
 package br.com.portfolio.lsilva.cadastropedidosapi.domain.dto;
 
-import br.com.portfolio.lsilva.cadastropedidosapi.domain.entity.ItemPedido;
 import br.com.portfolio.lsilva.cadastropedidosapi.domain.entity.Pedido;
 import lombok.*;
 
